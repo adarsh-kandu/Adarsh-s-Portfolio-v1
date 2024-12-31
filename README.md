@@ -19,11 +19,11 @@ This is a personal portfolio website designed and developed by **Adarsh Kandu** 
 
 ## File Structure
 
-├── index.html # Main HTML file 
-├── style.css # CSS file for styling 
-├── fevicon.png # Favicon for the website 
-├── adarshkandu.pdf # Resume file 
-└── README.md # Project documentation
+- index.html # Main HTML file 
+- style.css # CSS file for styling 
+- fevicon.png # Favicon for the website 
+- adarshkandu.pdf # Resume file 
+- README.md # Project documentation
 
 
 ## Sections Overview
