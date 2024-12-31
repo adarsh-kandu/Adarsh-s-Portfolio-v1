@@ -1,0 +1,374 @@
+/* -----------------------------------Importing font.-------------------------------------------- */
+@import url(https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inconsolata:wght@200..900&display=swap);
+
+/* -----------------------------------Defining root variables.-------------------------------------------- */
+:root {
+  --lightBackgroundTheme: #f6f9fc;
+  --lightNavBoxContact: #5a5d7a;
+  --lightNavContactHover: #90a9f9;
+  --lightTitleBorderHover: #747fe0;
+  --lightTitleCursor: rgba(116, 127, 224, 0.65);
+  --lightHeroDescriptionHeading: #525f7f;
+  --toolbar: #dfdee1;
+  --toolbarRed: #f96256;
+  --toolbarRedBorder: #f65549;
+  --toolbarYellow: #fdbc3d;
+  --toolbarYellowBorder: #ffb524;
+  --toolbarGreen: #33c948;
+  --toolbarGreenBorder: #2dbb41;
+  --lightBoxShadow: rgba(0, 0, 0, 0.1);
+  --lightBoxCursor: #f7f7f7b0;
+  --boxInputTextBefore: #f7f7f7;
+  --boxOutputYellow: #e7d181;
+  --boxLink: #3ed6de;
+  --lightFooterText: #525f7f;
+}
+
+/* -----------------------------------Global CSS properties.-------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inconsolata, serif;
+}
+
+/* -----------------------------------Scroll behaviour and scrollbar styling.-------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 5px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--lightTitleBorderHover);
+}
+
+/* -----------------------------------Body background and text styling.-------------------------------------------- */
+body {
+  background-color: var(--lightBackgroundTheme);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* -----------------------------------Hero title and nav container padding.-------------------------------------------- */
+.heroTitle,
+.navContainer {
+  padding: 50px 13vw;
+}
+
+/* -----------------------------------Navbar styling.-------------------------------------------- */
+.navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 60px;
+}
+.navbar ul li {
+  list-style: none;
+  font-size: 1.3em;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--lightNavBoxContact);
+}
+.navbar ul li a:hover {
+  color: var(--lightNavContactHover);
+  padding-bottom: 10px;
+  transition: 0.1s ease-in-out;
+  border-bottom: 0.3em solid var(--lightTitleBorderHover);
+}
+
+/* -----------------------------------Hero title styling.-------------------------------------------- */
+.heroTitle {
+  display: inline-block;
+}
+.heroTitle h1 {
+  font-size: 5em;
+  letter-spacing: 2px;
+  color: var(--lightTitleBorderHover);
+  font-weight: 500;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.4em solid var(--lightTitleCursor);
+  animation: typing 2s steps(12), cursor 0.5s step-end infinite alternate;
+}
+.heroTitle h1::before {
+  content: "> ";
+  font-size: 0.9em;
+}
+
+/* -----------------------------------H3 cursor styling.-------------------------------------------- */
+.h3Cursor span {
+  font-size: 1.2em;
+  background-color: var(--lightBoxCursor);
+  font-weight: 300;
+  line-height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  animation: h3Cursor 0.5s step-end infinite alternate;
+}
+.h3Cursor::before {
+  content: "> ";
+  font-size: 1.08em;
+  color: var(--boxInputTextBefore);
+  font-weight: 300;
+}
+
+/* -----------------------------------Typing and cursor styling.-------------------------------------------- */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+}
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes h3Cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* -----------------------------------Hero description styling.-------------------------------------------- */
+.heroDecription {
+  padding: 0 13vw;
+  font-size: 1.3em;
+  line-height: 40px;
+  color: var(--lightHeroDescriptionHeading);
+}
+
+/* -----------------------------------Toolbar styling.-------------------------------------------- */
+.toolBar {
+  height: 28px;
+  background-color: var(--toolbar);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 80px 13vw 0 13vw;
+}
+.toolBar .green,
+.toolBar .red,
+.toolBar .yellow {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 9px;
+}
+.toolBar .red {
+  background-color: var(--toolbarRed);
+  border: 1px solid var(--toolbarRedBorder);
+}
+.toolBar .yellow {
+  background-color: var(--toolbarYellow);
+  border: 1px solid var(--toolbarYellowBorder);
+}
+.toolBar .green {
+  background-color: var(--toolbarGreen);
+  border: 1px solid var(--toolbarGreenBorder);
+}
+
+/* -----------------------------------Container box styling.-------------------------------------------- */
+.box {
+  min-height: 350px;
+  background-color: var(--lightNavBoxContact);
+  padding: 20px 20px;
+  box-shadow: 10px 10px 10px var(--lightBoxShadow);
+  border-radius: 0 0 10px 10px;
+  margin: 0 13vw 0 13vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .box .info {
+  padding-bottom: 2vw;
+}
+.container .box .info:last-child {
+  padding-bottom: 0;
+}
+.container .box .info h3 {
+  color: var(--boxInputTextBefore);
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 30px;
+}
+.container .box .info p {
+  font-size: 1.2em;
+}
+.container .box .info h3::before {
+  content: "> ";
+  font-size: 0.9em;
+}
+.container .box .info p a {
+  color: var(--boxLink);
+  text-decoration: none;
+}
+
+/* -----------------------------------Defining yellow text class.-------------------------------------------- */
+.yellowText {
+  color: var(--boxOutputYellow);
+}
+
+/* -----------------------------------Projects and contact heading styling.-------------------------------------------- */
+.contactHeading,
+.projectHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactHeading h2,
+.projectHeading h2 {
+  display: inline-block;
+  color: var(--lightHeroDescriptionHeading);
+  font-weight: 500;
+  font-size: 1.7em;
+  margin-top: 50px;
+  border-bottom: 0.3em solid var(--lightTitleBorderHover);
+  padding: 50px 0 10px 0;
+}
+.contactHeading {
+  margin-top: 50px;
+  padding: 25px 0 10vw 0;
+}
+.contactHeading h2 {
+  padding-bottom: 10px;
+}
+
+/* -----------------------------------Contact links styling.-------------------------------------------- */
+.contactLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 10vw;
+}
+.contactLinks span a {
+  text-decoration: none;
+  color: var(--lightNavBoxContact);
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.contactLinks span a:hover {
+  color: var(--lightNavContactHover);
+  padding-bottom: 10px;
+  transition: 0.1s ease-in-out;
+  border-bottom: 0.3em solid var(--lightTitleBorderHover);
+}
+
+/* -----------------------------------Footer text styling.-------------------------------------------- */
+.footer-text {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--lightFooterText);
+  font-size: 1em;
+  font-weight: 400;
+}
+.footer-text .scrollToTop:hover {
+  cursor: pointer;
+  color: var(--lightNavContactHover);
+}
+
+/* -----------------------------------RESPONSIVENESS-------------------------------------------- */
+/* -----------------------------------Responsiveness after 1440px.-------------------------------------------- */
+@media (min-width: 1441px) {
+  .container .box .info p,
+  .heroDecription,
+  .navbar ul li {
+    font-size: 1.5em;
+  }
+  .heroTitle h1 {
+    font-size: 7em;
+  }
+  h2 {
+    font-size: 1.75em;
+  }
+  .contact-links span a {
+    font-size: 1.6em;
+  }
+  .footer-text {
+    font-size: 1.3em;
+  }
+}
+
+/* -----------------------------------Responsiveness at max width of 1000px.-------------------------------------------- */
+@media (max-width: 1000px) {
+  .heroTitle h1 {
+    font-size: 4em;
+  }
+}
+
+/* -----------------------------------Responsiveness at max width of 750px.-------------------------------------------- */
+@media (max-width: 750px) {
+  .container .box .info h3,
+  .container .box .info p {
+    font-size: 1em;
+  }
+  .navbar ul {
+    gap: 40px;
+    justify-content: center;
+  }
+  .heroTitle h1 {
+    font-size: 3em;
+  }
+  .heroDecription {
+    line-height: 35px;
+  }
+  .heroTitle,
+  .navContainer {
+    padding: 40px 10vw;
+  }
+  .heroDecription {
+    padding: 0 10vw;
+  }
+  .toolBar {
+    margin: 50px 10vw 0 10vw;
+  }
+  .box {
+    margin: 0 10vw 0 10vw;
+  }
+  h2 {
+    margin-top: 20px;
+    padding-top: 50px;
+  }
+  .contactLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 30vw;
+  }
+  .contactLinks .hideOnMobile {
+    display: none;
+  }
+  .contactHeading {
+    padding-bottom: 30vw;
+  }
+}
+
+/* -----------------------------------Responsiveness at max width of 600px.-------------------------------------------- */
+@media (max-width: 600px) {
+  .heroTitle {
+    font-size: 0.9em;
+  }
+}
+
+/* -----------------------------------Responsiveness at max width of 525px.-------------------------------------------- */
+@media (max-width: 525px) {
+  .heroTitle {
+    font-size: 0.7em;
+    font-weight: 700;
+  }
+}
+
+/* -----------------------------------Responsiveness at max width of 350px.-------------------------------------------- */
+@media (max-width: 350px) {
+  .heroTitle {
+    font-size: 0.6em;
+    font-weight: 700;
+  }
+}
